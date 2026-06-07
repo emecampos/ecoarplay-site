@@ -235,6 +235,7 @@
 .car-dots button{width:9px;height:9px;border-radius:50%;border:none;background:#cbd5e1;cursor:pointer;padding:0;transition:all .3s;}
 .car-dots button.on{width:26px;border-radius:5px;background:linear-gradient(135deg,var(--roxo),var(--ciano));}
 .car-arrow{display:none;}
+.contact-form select option{color:#1a1a2e;background:#fff;}
 /* player: a screenshot ja tem a janela; so moldura suave */
 .player-show{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .player-lead{font-size:14px;font-weight:700;color:#475569;}
@@ -581,12 +582,16 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
       <input id="f_empresa" type="text" placeholder="Empresa">
       <select id="f_uso">
         <option value="">Como pretende usar o EcoarPlay?</option>
-        <option>Uso próprio nas minhas unidades</option>
-        <option>Oferecer como serviço aos meus clientes</option>
+        <option>Uso próprio nas minhas lojas/unidades</option>
+        <option>Sou produtora de conteúdo / agência</option>
+        <option>Quero revender / oferecer como serviço</option>
+        <option>Integrador / instalador de áudio e vídeo</option>
         <option>Ainda não sei — quero conhecer</option>
+        <option>Outros</option>
       </select>
       <input id="f_term" type="text" placeholder="Quantidade estimada de terminais">
       <textarea id="f_msg" placeholder="Conte um pouco sobre seu negócio..."></textarea>
+      <input id="f_site" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;opacity:0;">
       <button class="btn-send" type="button" onclick="enviarLead()">Enviar mensagem →</button>
       <p id="f_feedback" style="margin-top:12px;font-size:13px;min-height:18px;"></p>
     </div>
@@ -659,28 +664,44 @@ document.querySelectorAll('[data-carousel]').forEach(initCar);
   });
 })();
 
-// ===== Formulario -> mailto =====
+// ===== Formulario -> backend (SMTP) com fallback mailto =====
+var API_CONTATO = 'https://apptst.ecoarplay.com.br/api/contato/'; // trocar para app.ecoarplay.com.br quando a producao subir
 function enviarLead(){
   var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
   var nome = v('f_nome'), email = v('f_email'), empresa = v('f_empresa');
-  var uso = v('f_uso'), term = v('f_term'), msg = v('f_msg');
+  var uso = v('f_uso'), term = v('f_term'), msg = v('f_msg'), hp = v('f_site');
   var fb = document.getElementById('f_feedback');
   if (!nome || !email){
     fb.style.color = '#ef4444';
     fb.textContent = 'Por favor, preencha ao menos seu nome e e-mail.';
     return;
   }
-  var corpo = 'Nome: ' + nome + '\n' +
-              'E-mail: ' + email + '\n' +
-              'Empresa: ' + (empresa || '-') + '\n' +
-              'Uso pretendido: ' + (uso || '-') + '\n' +
-              'Terminais estimados: ' + (term || '-') + '\n\n' +
-              'Mensagem:\n' + (msg || '-');
-  var assunto = 'Solicitacao de demonstracao - ' + (empresa || nome);
-  var link = 'mailto:ecoarplay@gmail.com?subject=' + encodeURIComponent(assunto) + '&body=' + encodeURIComponent(corpo);
-  window.location.href = link;
-  fb.style.color = '#16a34a';
-  fb.textContent = 'Abrindo seu aplicativo de e-mail... Se nada abrir, escreva para ecoarplay@gmail.com';
+  fb.style.color = '#64748b';
+  fb.textContent = 'Enviando...';
+  var payload = { nome:nome, email:email, empresa:empresa, uso:uso, terminais:term, mensagem:msg, website:hp };
+  fetch(API_CONTATO, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function(r){
+    if (!r.ok) throw new Error('http ' + r.status);
+    fb.style.color = '#16a34a';
+    fb.textContent = 'Mensagem enviada! Em breve entraremos em contato.';
+    ['f_nome','f_email','f_empresa','f_term','f_msg'].forEach(function(id){ var e = document.getElementById(id); if (e) e.value = ''; });
+    var s = document.getElementById('f_uso'); if (s) s.selectedIndex = 0;
+  }).catch(function(){
+    // fallback: abre o e-mail do visitante ja preenchido
+    var corpo = 'Nome: ' + nome + '\n' +
+                'E-mail: ' + email + '\n' +
+                'Empresa: ' + (empresa || '-') + '\n' +
+                'Uso pretendido: ' + (uso || '-') + '\n' +
+                'Terminais estimados: ' + (term || '-') + '\n\n' +
+                'Mensagem:\n' + (msg || '-');
+    var link = 'mailto:ecoarplay@gmail.com?subject=' + encodeURIComponent('Contato site - ' + (empresa || nome)) + '&body=' + encodeURIComponent(corpo);
+    window.location.href = link;
+    fb.style.color = '#b45309';
+    fb.textContent = 'Abrindo seu aplicativo de e-mail para concluir o envio...';
+  });
 }
 
 function setTab(el, faixa) {
