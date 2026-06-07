@@ -323,6 +323,32 @@ body.dark-theme .car-bar{background:#11192e;border-bottom-color:rgba(255,255,255
 body.dark-theme .car-bar .url{background:#0a0f1e;border-color:rgba(255,255,255,0.08);color:#64748b;}
 body.dark-theme .car-cap,body.dark-theme .player-lead{color:rgba(255,255,255,0.6);}
 body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
+
+/* ===== EFEITOS ===== */
+body.js-anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}
+body.js-anim .reveal.in{opacity:1;transform:none;}
+body.js-anim .reveal.d1{transition-delay:.07s;}
+body.js-anim .reveal.d2{transition-delay:.14s;}
+body.js-anim .reveal.d3{transition-delay:.21s;}
+@media (prefers-reduced-motion: reduce){
+  body.js-anim .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+}
+nav{transition:box-shadow .3s ease, background .3s ease;}
+nav.scrolled{box-shadow:0 6px 26px rgba(10,15,30,0.10);}
+body.dark-theme nav.scrolled{box-shadow:0 6px 26px rgba(0,0,0,0.45);}
+.bento,.pq-card,.plan{transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;}
+.bento:hover,.pq-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(15,23,42,0.12);}
+.plan:hover{transform:translateY(-6px);}
+.plan-cta,.hero-btns a,.nav-cta{transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;}
+.plan-cta:hover,.hero-btns a:hover,.nav-cta:hover{filter:brightness(1.05);transform:translateY(-2px);}
+body.js-anim .hero-anim{opacity:0;transform:translateY(22px);animation:heroIn .9s cubic-bezier(.2,.7,.2,1) forwards;}
+body.js-anim .hero-anim.h2{animation-delay:.12s;}
+body.js-anim .hero-anim.h3{animation-delay:.24s;}
+body.js-anim .hero-anim.h4{animation-delay:.36s;}
+@keyframes heroIn{to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion: reduce){
+  body.js-anim .hero-anim{opacity:1 !important;transform:none !important;animation:none !important;}
+}
 </style>
 </head>
 <body class="dark-theme">
@@ -354,7 +380,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
   <div class="hero-inner">
     <div class="hero-pill"><div class="hero-pill-dot"></div>Tecnologia em Mídias Indoor</div>
     <h1>O som certo.<br>No lugar certo.<br><span class="g">Na hora certa.</span></h1>
-    <p>Plataforma de rádio indoor para estabelecimentos comerciais. Gestão completa de música ambiente, campanhas sonoras e comunicação personalizada — tudo via web.</p>
+    <p>Plataforma de rádio indoor para estabelecimentos comerciais. A plataforma para gerenciar e distribuir o áudio do seu ponto de venda — música ambiente, campanhas sonoras e comunicação, tudo via web.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-grad">Solicitar demonstração gratuita</a>
       <a href="#features" class="btn-outline">Conhecer o produto</a>
@@ -431,7 +457,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
     <div class="bento purple">
       <div class="bento-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 28V10l16-3v18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="28" r="4" stroke="currentColor" stroke-width="2.5"/><circle cx="26" cy="25" r="4" stroke="currentColor" stroke-width="2.5"/></svg></div>
       <h3>Música ambiente inteligente</h3>
-      <p>Programação por estilo musical, horário e filial. Cada espaço com a trilha sonora ideal para a sua marca e seu público.</p>
+      <p>Programe e distribua a trilha por estilo, horário e filial. Use as mídias dos nossos parceiros de conteúdo ou o seu próprio acervo.</p>
     </div>
     <div class="bento cyan wide">
       <div class="bento-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="20" width="6" height="12" rx="2" fill="currentColor" opacity="0.7"/><rect x="14" y="12" width="6" height="20" rx="2" fill="currentColor"/><rect x="24" y="6" width="6" height="26" rx="2" fill="currentColor" opacity="0.8"/><path d="M4 8l8-3 8 5 8-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -506,9 +532,10 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
   <h2>Veja o player funcionando</h2>
   <div class="sub">Acompanhe na prática como o EcoarPlay Player opera no ponto de venda.</div>
   <div class="video-wrap">
-    <div class="video-frame">
-      <iframe src="https://www.youtube-nocookie.com/embed/x_eD2cL5SPY?rel=0" title="EcoarPlay Player em ação" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+    <a class="video-facade" href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" aria-label="Assistir no YouTube">
+      <img src="https://img.youtube.com/vi/x_eD2cL5SPY/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/x_eD2cL5SPY/hqdefault.jpg';" alt="EcoarPlay Player em ação" loading="lazy">
+      <span class="video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
   </div>
   <p style="margin-top:24px;font-size:14px;">
     <a href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" style="color:#93c5fd;font-weight:700;text-decoration:none;">▶ Assistir no YouTube</a>
@@ -571,7 +598,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
     </div>
   </div>
   <div class="aviso-ecad">
-    ℹ️ <strong>Licenciamento musical:</strong> O EcoarPlay fornece a plataforma de distribuição de áudio. O licenciamento junto ao ECAD e demais entidades de gestão de direitos autorais é de responsabilidade do contratante.
+    ℹ️ <strong>Como funciona:</strong> O EcoarPlay fornece a tecnologia — a plataforma de gestão e o player. A produção de conteúdo e o fornecimento das mídias (músicas, locuções) ficam a cargo de parceiros ou do próprio cliente. O licenciamento junto ao ECAD e demais entidades de direitos autorais é de responsabilidade do contratante.
   </div>
 </section>
 
@@ -738,6 +765,35 @@ function enviarLead(){
     fb.innerHTML = 'Não foi possível enviar agora. Tente novamente em instantes ou fale pelo <a href="https://wa.me/5511983636557" target="_blank" rel="noopener" style="color:#25d366;font-weight:700;text-decoration:none;">WhatsApp</a>.';
   });
 }
+
+// ===== Efeitos visuais (reveal no scroll, nav, entrada do hero) =====
+(function(){
+  document.body.classList.add('js-anim');
+  var hero = document.querySelector('.hero-inner');
+  if (hero){
+    var hk = hero.children;
+    for (var i = 0; i < hk.length; i++){
+      hk[i].classList.add('hero-anim');
+      if (i > 0 && i < 4) hk[i].classList.add('h' + (i + 1));
+    }
+  }
+  var nav = document.querySelector('nav');
+  function onScroll(){ if (nav){ nav.classList.toggle('scrolled', window.scrollY > 10); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  var alvos = document.querySelectorAll('.pq-card, .bento, .plan, .car, h2.big, .contact-grid > *');
+  alvos.forEach(function(el){ el.classList.add('reveal'); });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    alvos.forEach(function(el){ io.observe(el); });
+  } else {
+    alvos.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
 
 var API_PRECOS = 'https://apptst.ecoarplay.com.br/api/precos/'; // trocar para app.ecoarplay.com.br na producao
 var PRECOS = null;
