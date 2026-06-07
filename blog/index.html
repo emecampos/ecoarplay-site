@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog EcoarPlay — Música ambiente, rádio indoor e áudio para o varejo</title>
+<meta name="description" content="Artigos e guias sobre música ambiente, rádio indoor, campanhas sonoras e experiência do cliente no ponto de venda. Conteúdo prático para lojas, redes e franquias.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0f1e">
+<link rel="canonical" href="https://ecoarplay.com.br/blog/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EcoarPlay">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Blog EcoarPlay — Música ambiente e rádio indoor para o varejo">
+<meta property="og:description" content="Guias práticos sobre música ambiente, rádio indoor e experiência sonora no ponto de venda.">
+<meta property="og:url" content="https://ecoarplay.com.br/blog/">
+<meta property="og:image" content="https://ecoarplay.com.br/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --roxo:#7c3aed; --ciano:#06b6d4; --escuro:#0a0f1e; --cinza:#64748b;
+  --bg:#ffffff; --fg:#1a1a2e; --muted:#64748b; --card:#f8f9ff; --linha:#e7e9f0;
+}
+body.dark-theme{
+  --roxo:#3b82f6; --ciano:#60a5fa;
+  --bg:#0a0f1e; --fg:#e2e8f0; --muted:#94a3b8; --card:#0d1425; --linha:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+
+/* ===== NAV ===== */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--bg);z-index:50;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{width:40px;height:40px;border-radius:9px;}
+.nav-logo-text{font-size:20px;font-weight:800;letter-spacing:-.5px;color:var(--fg);}
+.nav-logo-text span{background:linear-gradient(135deg,var(--roxo),var(--ciano));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;align-items:center;gap:26px;}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;transition:color .2s;}
+.nav-links a:hover{color:var(--fg);}
+.nav-cta{background:linear-gradient(135deg,var(--roxo),var(--ciano));color:#fff !important;padding:10px 20px;border-radius:10px;font-weight:700;}
+.theme-toggle{background:none;border:1px solid var(--linha);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;}
+.nav-toggle{display:none;background:none;border:none;font-size:26px;color:var(--fg);cursor:pointer;}
+
+/* ===== CONTAINER ===== */
+.wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px;}
+.wrap-wide{max-width:1080px;}
+
+/* ===== BLOG INDEX ===== */
+.blog-hero{text-align:center;padding:64px 24px 8px;}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ciano);background:color-mix(in srgb,var(--ciano) 12%,transparent);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+.blog-hero h1{font-size:clamp(30px,5vw,46px);font-weight:900;letter-spacing:-1.5px;margin:0 0 14px;}
+.blog-hero p{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto;}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;margin-top:8px;}
+.post-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--linha);border-radius:16px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(15,23,42,.16);}
+.post-thumb{height:150px;background:linear-gradient(135deg,var(--roxo),var(--ciano));display:flex;align-items:center;justify-content:center;font-size:46px;}
+.post-body{padding:24px;}
+.post-tag{font-size:12px;font-weight:700;color:var(--ciano);text-transform:uppercase;letter-spacing:.06em;}
+.post-body h2{font-size:20px;font-weight:800;margin:10px 0 10px;line-height:1.3;color:var(--fg);}
+.post-body p{color:var(--muted);font-size:15px;margin:0;}
+.post-meta{margin-top:16px;font-size:13px;color:var(--muted);}
+
+/* ===== ARTIGO ===== */
+.article-head{max-width:780px;margin:0 auto;padding:48px 24px 0;}
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:22px;}
+.crumbs a{color:var(--ciano);text-decoration:none;}
+.article-head h1{font-size:clamp(28px,4.6vw,44px);font-weight:900;letter-spacing:-1.4px;line-height:1.15;margin:0 0 16px;}
+.article-meta{color:var(--muted);font-size:14px;}
+.article-cover{max-width:1080px;margin:32px auto 0;padding:0 24px;}
+.article-cover .band{height:8px;border-radius:8px;background:linear-gradient(90deg,var(--roxo),var(--ciano));}
+article{max-width:780px;margin:0 auto;padding:8px 24px 40px;font-size:17px;}
+article h2{font-size:27px;font-weight:800;letter-spacing:-.6px;margin:42px 0 14px;}
+article h3{font-size:20px;font-weight:700;margin:28px 0 8px;}
+article p{margin:0 0 18px;}
+article ul,article ol{margin:0 0 18px;padding-left:22px;}
+article li{margin-bottom:8px;}
+article a{color:var(--ciano);text-decoration:underline;text-underline-offset:2px;}
+article strong{color:var(--fg);}
+.lead{font-size:19px;color:var(--muted);}
+.nota{background:var(--card);border-left:4px solid var(--ciano);border-radius:8px;padding:16px 18px;margin:24px 0;font-size:15px;color:var(--muted);}
+.faq h3{margin-top:24px;}
+.cta-box{margin:46px 0 0;padding:34px;border-radius:18px;background:linear-gradient(135deg,var(--roxo),var(--ciano));color:#fff;text-align:center;}
+.cta-box h3{font-size:24px;font-weight:800;margin:0 0 10px;color:#fff;}
+.cta-box p{margin:0 0 20px;opacity:.92;}
+.cta-box a{display:inline-block;background:#fff;color:#0a0f1e;font-weight:800;padding:13px 28px;border-radius:11px;text-decoration:none;}
+
+/* ===== FOOTER ===== */
+.foot{border-top:1px solid var(--linha);padding:34px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px;}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+.foot-links a{text-decoration:none;color:var(--muted);}
+.foot-links a:hover{color:var(--fg);}
+
+@media (max-width:760px){
+  .nav{padding:14px 20px;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);border-bottom:1px solid var(--linha);padding:18px 22px;gap:16px;}
+  .nav.open .nav-links{display:flex;}
+  .nav-toggle{display:block;}
+  .wrap{padding:40px 20px 64px;}
+  .foot{padding:28px 20px;flex-direction:column;text-align:center;}
+  .foot-links{justify-content:center;}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "name":"Blog EcoarPlay",
+  "url":"https://ecoarplay.com.br/blog/",
+  "description":"Artigos sobre música ambiente, rádio indoor e áudio para o varejo.",
+  "publisher":{"@type":"Organization","name":"EcoarPlay","logo":"https://ecoarplay.com.br/favicon.png"}
+}
+</script>
+</head>
+<body class="dark-theme">
+<script>(function(){try{if(localStorage.getItem('ecoarplay-theme')==='light')document.body.classList.remove('dark-theme');}catch(e){}})();</script>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">
+    <img src="/favicon.png" alt="EcoarPlay">
+    <span class="nav-logo-text">Ecoar<span>Play</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" onclick="this.parentElement.classList.toggle('open')">☰</button>
+  <div class="nav-links">
+    <a href="/#paraquem">Para quem</a>
+    <a href="/#features">Produto</a>
+    <a href="/#pricing">Planos</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contato</a>
+    <a class="nav-cta" href="https://apptst.ecoarplay.com.br/operacao-ecoarplay/login/" target="_blank" rel="noopener">Acessar sistema</a>
+    <button class="theme-toggle" aria-label="Alternar tema" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <span class="pill">Blog EcoarPlay</span>
+  <h1>Som que vende: ideias para o seu ponto de venda</h1>
+  <p>Guias práticos sobre música ambiente, rádio indoor, campanhas sonoras e experiência do cliente — para lojas, redes e franquias.</p>
+</header>
+
+<main class="wrap wrap-wide">
+  <div class="post-grid">
+
+    <a class="post-card" href="/blog/musica-ambiente-para-loja/">
+      <div class="post-thumb">🎶</div>
+      <div class="post-body">
+        <div class="post-tag">Guia</div>
+        <h2>Música ambiente para loja: o guia completo (gêneros, ECAD, custos e automação)</h2>
+        <p>Como escolher o som certo para cada tipo de negócio, o que a lei exige e como automatizar tudo sem dor de cabeça.</p>
+        <div class="post-meta">Leitura de ~7 min</div>
+      </div>
+    </a>
+
+    <!--
+    MODELO PARA NOVO ARTIGO (copie este bloco, troque o link, emoji, tag, titulo e resumo):
+    <a class="post-card" href="/blog/slug-do-artigo/">
+      <div class="post-thumb">🐾</div>
+      <div class="post-body">
+        <div class="post-tag">Categoria</div>
+        <h2>Titulo do artigo</h2>
+        <p>Resumo curto e atraente do artigo.</p>
+        <div class="post-meta">Leitura de ~X min</div>
+      </div>
+    </a>
+    -->
+
+  </div>
+</main>
+
+<footer class="foot">
+  <span>© 2026 EcoarPlay — Tecnologia em Mídias Indoor</span>
+  <div class="foot-links">
+    <a href="/">Início</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contato</a>
+    <a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle('dark-theme');
+  try{ localStorage.setItem('ecoarplay-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light'); }catch(e){}
+}
+</script>
+</body>
+</html>
