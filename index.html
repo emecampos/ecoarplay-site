@@ -690,17 +690,8 @@ function enviarLead(){
     ['f_nome','f_email','f_empresa','f_term','f_msg'].forEach(function(id){ var e = document.getElementById(id); if (e) e.value = ''; });
     var s = document.getElementById('f_uso'); if (s) s.selectedIndex = 0;
   }).catch(function(){
-    // fallback: abre o e-mail do visitante ja preenchido
-    var corpo = 'Nome: ' + nome + '\n' +
-                'E-mail: ' + email + '\n' +
-                'Empresa: ' + (empresa || '-') + '\n' +
-                'Uso pretendido: ' + (uso || '-') + '\n' +
-                'Terminais estimados: ' + (term || '-') + '\n\n' +
-                'Mensagem:\n' + (msg || '-');
-    var link = 'mailto:ecoarplay@gmail.com?subject=' + encodeURIComponent('Contato site - ' + (empresa || nome)) + '&body=' + encodeURIComponent(corpo);
-    window.location.href = link;
-    fb.style.color = '#b45309';
-    fb.textContent = 'Abrindo seu aplicativo de e-mail para concluir o envio...';
+    fb.style.color = '#ef4444';
+    fb.innerHTML = 'Não foi possível enviar agora. Tente novamente em instantes ou fale pelo <a href="https://wa.me/5511983636557" target="_blank" rel="noopener" style="color:#25d366;font-weight:700;text-decoration:none;">WhatsApp</a>.';
   });
 }
 
