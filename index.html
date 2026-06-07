@@ -238,13 +238,6 @@
 .video-wrap{max-width:880px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);background:#000;}
 .video-frame{position:relative;width:100%;aspect-ratio:16/9;}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;cursor:pointer;background:#000;}
-.video-facade img{width:100%;height:100%;object-fit:cover;display:block;}
-.video-facade::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.20);transition:background .3s;}
-.video-facade:hover::after{background:rgba(0,0,0,0.30);}
-.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:#ff0000;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 10px 34px rgba(0,0,0,0.45);transition:transform .25s;}
-.video-facade:hover .video-play{transform:translate(-50%,-50%) scale(1.08);}
-.video-play svg{width:36px;height:36px;fill:#fff;margin-left:5px;}
 
 /* ===== SHOWCASE / CARROSSEL "GIRANDO" ===== */
 .shots-wrap{background:#f8f9ff;padding:60px 24px 72px;overflow:hidden;}
@@ -532,10 +525,9 @@ body.js-anim .hero-anim.h4{animation-delay:.36s;}
   <h2>Veja o player funcionando</h2>
   <div class="sub">Acompanhe na prática como o EcoarPlay Player opera no ponto de venda.</div>
   <div class="video-wrap">
-    <a class="video-facade" href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" aria-label="Assistir no YouTube">
-      <img src="https://img.youtube.com/vi/x_eD2cL5SPY/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/x_eD2cL5SPY/hqdefault.jpg';" alt="EcoarPlay Player em ação" loading="lazy">
-      <span class="video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-    </a>
+    <div class="video-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/x_eD2cL5SPY?rel=0" title="EcoarPlay Player em ação" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
   <p style="margin-top:24px;font-size:14px;">
     <a href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" style="color:#93c5fd;font-weight:700;text-decoration:none;">▶ Assistir no YouTube</a>
