@@ -36,6 +36,36 @@
 <meta name="twitter:title" content="EcoarPlay — Rádio Indoor para o Varejo">
 <meta name="twitter:description" content="Música ambiente, campanhas sonoras e monitoramento em tempo real. Gestão 100% web.">
 <meta name="twitter:image" content="https://ecoarplay.com.br/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EcoarPlay",
+  "url": "https://ecoarplay.com.br/",
+  "logo": "https://ecoarplay.com.br/favicon.png",
+  "image": "https://ecoarplay.com.br/og-cover.png",
+  "description": "Plataforma de rádio indoor para o varejo: música ambiente, campanhas sonoras e comunicação personalizada com gestão 100% web e player para Windows.",
+  "email": "ecoarplay@gmail.com",
+  "areaServed": "BR",
+  "sameAs": [
+    "https://www.youtube.com/@EcoarPlay",
+    "https://www.instagram.com/ecoarplay"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EcoarPlay",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Windows",
+  "inLanguage": "pt-BR",
+  "url": "https://ecoarplay.com.br/",
+  "description": "Rádio indoor para estabelecimentos comerciais: música ambiente personalizada, campanhas sonoras automáticas, monitoramento de terminais em tempo real e player próprio.",
+  "offers": { "@type": "Offer", "priceCurrency": "BRL", "category": "SaaS" }
+}
+</script>
 <style>
   :root {
     --roxo: #7c3aed;
@@ -198,6 +228,7 @@
 .nav-yt{display:inline-flex;align-items:center;gap:6px;color:#555 !important;font-weight:600;}
 .nav-yt svg{width:20px;height:20px;}
 .nav-yt:hover{color:#ff0000 !important;}
+.nav-ig:hover{color:#e1306c !important;}
 
 /* ===== VIDEO ===== */
 .video-sec{padding:72px 72px 80px;background:#0a0f1e;text-align:center;}
@@ -218,7 +249,7 @@
 /* ===== SHOWCASE / CARROSSEL "GIRANDO" ===== */
 .shots-wrap{background:#f8f9ff;padding:60px 24px 72px;overflow:hidden;}
 .shots-head{text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#9aa3b2;margin-bottom:44px;}
-.showcase{max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:64px;}
+.showcase{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:64px;}
 .car{position:relative;width:100%;}
 .car-frame{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 26px 64px rgba(15,23,42,0.16);border:1px solid #e5e7eb;background:#fff;}
 .car-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f1f3f8;border-bottom:1px solid #e7e9f0;}
@@ -239,7 +270,7 @@
 /* player: a screenshot ja tem a janela; so moldura suave */
 .player-show{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .player-lead{font-size:14px;font-weight:700;color:#475569;}
-.car-player{max-width:480px;}
+.car-player{max-width:680px;}
 .car-player .car-viewport{aspect-ratio:800/697;border-radius:14px;box-shadow:0 22px 54px rgba(15,23,42,0.22);border:1px solid #e5e7eb;background:#0a0f1e;}
 .car-player .car-slide img{object-fit:contain;}
 
@@ -307,6 +338,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
     <li><a href="#parceiros">Parceiros</a></li>
     <li><a href="#contact">Contato</a></li>
     <li><a class="nav-yt" href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener" aria-label="Canal no YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>YouTube</a></li>
+    <li><a class="nav-yt nav-ig" href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 8.5 2.6 8.9 2.6 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.2-8.3a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/></svg>Instagram</a></li>
     <li><a href="https://apptst.ecoarplay.com.br/operacao-ecoarplay/login/" class="nav-cta" target="_blank" rel="noopener">Acessar sistema</a></li>
     <li><button id="themeToggle" onclick="toggleTheme()" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;" title="Alternar tema">🌙</button></li>
   </ul>
@@ -469,10 +501,9 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
   <h2>Veja o player funcionando</h2>
   <div class="sub">Acompanhe na prática como o EcoarPlay Player opera no ponto de venda.</div>
   <div class="video-wrap">
-    <a class="video-facade" href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" aria-label="Assistir no YouTube">
-      <img src="https://img.youtube.com/vi/x_eD2cL5SPY/hqdefault.jpg" alt="EcoarPlay Player em ação" loading="lazy">
-      <span class="video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-    </a>
+    <div class="video-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/x_eD2cL5SPY?rel=0" title="EcoarPlay Player em ação" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
   <p style="margin-top:24px;font-size:14px;">
     <a href="https://www.youtube.com/watch?v=x_eD2cL5SPY" target="_blank" rel="noopener" style="color:#93c5fd;font-weight:700;text-decoration:none;">▶ Assistir no YouTube</a>
@@ -574,6 +605,10 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
           <div class="contact-chip-icon" style="background:rgba(255,0,0,0.1);"><svg width="18" height="18" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></div>
           <span>YouTube: @EcoarPlay</span>
         </a>
+        <a href="https://www.instagram.com/ecoarplay" class="contact-chip" target="_blank" rel="noopener">
+          <div class="contact-chip-icon" style="background:rgba(225,48,108,0.12);"><svg width="18" height="18" viewBox="0 0 24 24" fill="#e1306c"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 5.6a4.2 4.2 0 100 8.4 4.2 4.2 0 000-8.4zm0 6.9a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm5.3-7.1a1 1 0 11-2 0 1 1 0 012 0z"/></svg></div>
+          <span>Instagram: @ecoarplay</span>
+        </a>
       </div>
     </div>
     <div class="contact-form">
@@ -611,6 +646,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
       <a href="#pricing">Planos</a>
       <a href="#contact">Contato</a>
       <a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
       <a href="https://apptst.ecoarplay.com.br/operacao-ecoarplay/login/" target="_blank" rel="noopener">Acessar sistema</a>
     </div>
   </div>
