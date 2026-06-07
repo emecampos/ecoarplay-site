@@ -267,6 +267,10 @@
 .car-dots button.on{width:26px;border-radius:5px;background:linear-gradient(135deg,var(--roxo),var(--ciano));}
 .car-arrow{display:none;}
 .contact-form select option{color:#1a1a2e;background:#fff;}
+.plan-value{margin:8px 0 2px;min-height:34px;line-height:1.2;}
+.plan-value .pv-num{font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--roxo),var(--ciano));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.plan-value .pv-unit{font-size:13px;color:var(--cinza);margin-left:6px;font-weight:600;}
+.plan-value .pv-txt{font-size:18px;font-weight:800;color:var(--cinza);}
 /* player: a screenshot ja tem a janela; so moldura suave */
 .player-show{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .player-lead{font-size:14px;font-weight:700;color:#475569;}
@@ -520,15 +524,15 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
   <div class="sub">Escolha a periodicidade e a faixa de terminais que mais se adequa ao seu negócio.</div>
   <div class="pricing-note">💡 Disponível em assinatura mensal, semestral, anual e bienal, além de venda perpétua com plano de sustentação incluso. Cada plano é dimensionado pela quantidade de terminais ativos. <strong>Consulte nossas condições para planos semestrais, bienais e de sustentação.</strong></div>
   <div class="pricing-tabs">
-    <button class="ptab active" onclick="setTab(this,'1-5')">1 a 5 terminais</button>
-    <button class="ptab" onclick="setTab(this,'6-15')">6 a 15 terminais</button>
-    <button class="ptab" onclick="setTab(this,'16-50')">16 a 50 terminais</button>
-    <button class="ptab" onclick="setTab(this,'51+')">51+ terminais</button>
+    <button class="ptab active" onclick="setTab(this,'1','1 a 50 terminais')">1 a 50 terminais</button>
+    <button class="ptab" onclick="setTab(this,'51','51 a 300 terminais')">51 a 300 terminais</button>
+    <button class="ptab" onclick="setTab(this,'301','301+ terminais')">301+ terminais</button>
   </div>
   <div class="pricing-grid" id="pricing-grid">
     <div class="plan">
-      <div class="plan-slots">1 a 5 terminais</div>
+      <div class="plan-slots" data-slot>1 a 50 terminais</div>
       <div class="plan-name">Mensal</div>
+      <div class="plan-value" data-price="MENSAL">—</div>
       <div class="plan-price">Sem fidelidade — flexibilidade total</div>
       <ul>
         <li>Música ambiente</li>
@@ -536,11 +540,12 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
         <li>Monitoramento</li>
         <li>Suporte por email</li>
       </ul>
-      <a href="#contact" class="plan-cta">Consultar valor</a>
+      <a href="#contact" class="plan-cta">Solicitar proposta</a>
     </div>
     <div class="plan featured">
-      <div class="plan-slots">1 a 5 terminais</div>
+      <div class="plan-slots" data-slot>1 a 50 terminais</div>
       <div class="plan-name">Anual</div>
+      <div class="plan-value" data-price="ANUAL">—</div>
       <div class="plan-price">Melhor custo-benefício — 12 meses</div>
       <ul>
         <li>Tudo do Mensal</li>
@@ -549,11 +554,12 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
         <li>Facilitadores por filial</li>
         <li>Suporte prioritário</li>
       </ul>
-      <a href="#contact" class="plan-cta">Consultar valor</a>
+      <a href="#contact" class="plan-cta">Solicitar proposta</a>
     </div>
     <div class="plan">
-      <div class="plan-slots">1 a 5 terminais</div>
+      <div class="plan-slots" data-slot>1 a 50 terminais</div>
       <div class="plan-name">Venda Perpétua</div>
+      <div class="plan-value" data-price="VENDA">—</div>
       <div class="plan-price">Licença definitiva + Sustentação anual</div>
       <ul>
         <li>Pagamento único</li>
@@ -561,7 +567,7 @@ body.dark-theme .car-player .car-viewport{border-color:rgba(255,255,255,0.08);}
         <li>Sustentação inclusa no 1º ano</li>
         <li>Renovação anual opcional</li>
       </ul>
-      <a href="#contact" class="plan-cta">Consultar valor</a>
+      <a href="#contact" class="plan-cta">Solicitar proposta</a>
     </div>
   </div>
   <div class="aviso-ecad">
@@ -733,12 +739,48 @@ function enviarLead(){
   });
 }
 
-function setTab(el, faixa) {
-  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  const labels = document.querySelectorAll('.plan-slots');
-  labels.forEach(l => l.textContent = faixa + ' terminais');
+var API_PRECOS = 'https://apptst.ecoarplay.com.br/api/precos/'; // trocar para app.ecoarplay.com.br na producao
+var PRECOS = null;
+var FAIXA_ATUAL = { min: '1', label: '1 a 50 terminais' };
+function brlPreco(v){
+  var n = parseFloat(v);
+  if (isNaN(n)) return null;
+  return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
+function aplicarFaixa(min, label){
+  FAIXA_ATUAL = { min: String(min), label: label };
+  document.querySelectorAll('.plan-slots[data-slot]').forEach(function(el){ el.textContent = label; });
+  var faixa = PRECOS ? PRECOS[String(min)] : null;
+  document.querySelectorAll('.plan-value[data-price]').forEach(function(el){
+    var tipo = el.getAttribute('data-price');
+    if (faixa && faixa.consulte){
+      el.innerHTML = '<span class="pv-txt">Consulte os valores</span>';
+      return;
+    }
+    var valor = (faixa && faixa.precos) ? faixa.precos[tipo] : null;
+    var fmt = valor ? brlPreco(valor) : null;
+    if (fmt){
+      var unidade = (tipo === 'VENDA') ? '/terminal' : '/terminal · mês';
+      el.innerHTML = '<span class="pv-num">' + fmt + '</span><span class="pv-unit">' + unidade + '</span>';
+    } else {
+      el.innerHTML = '<span class="pv-txt">Consultar valor</span>';
+    }
+  });
+}
+function setTab(el, min, label){
+  document.querySelectorAll('.ptab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  aplicarFaixa(min, label);
+}
+(function(){
+  aplicarFaixa(FAIXA_ATUAL.min, FAIXA_ATUAL.label);
+  fetch(API_PRECOS).then(function(r){ return r.ok ? r.json() : null; }).then(function(data){
+    if (!data || !data.faixas) return;
+    PRECOS = {};
+    data.faixas.forEach(function(f){ PRECOS[String(f.min)] = f; });
+    aplicarFaixa(FAIXA_ATUAL.min, FAIXA_ATUAL.label);
+  }).catch(function(){});
+})();
 </script>
 <style>
 body.dark-theme {
