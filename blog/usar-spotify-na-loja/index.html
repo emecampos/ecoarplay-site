@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posso usar Spotify na minha loja? A resposta (e o que fazer) | EcoarPlay</title>
+<meta name="description" content="Usar Spotify, YouTube ou Deezer no ambiente comercial é permitido? Entenda o que dizem os termos de uso, os riscos para o lojista, a questão do ECAD e a forma correta de ter música na sua loja.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0a0f1e">
+<link rel="canonical" href="https://ecoarplay.com.br/blog/usar-spotify-na-loja/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="EcoarPlay">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Posso usar Spotify na minha loja?">
+<meta property="og:description" content="O que dizem os termos de uso, os riscos para o lojista, o ECAD e a forma correta de ter música no ponto de venda.">
+<meta property="og:url" content="https://ecoarplay.com.br/blog/usar-spotify-na-loja/">
+<meta property="og:image" content="https://ecoarplay.com.br/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --roxo:#7c3aed; --ciano:#06b6d4; --escuro:#0a0f1e; --cinza:#64748b;
+  --bg:#ffffff; --fg:#1a1a2e; --muted:#64748b; --card:#f8f9ff; --linha:#e7e9f0;
+}
+body.dark-theme{
+  --roxo:#3b82f6; --ciano:#60a5fa;
+  --bg:#0a0f1e; --fg:#e2e8f0; --muted:#94a3b8; --card:#0d1425; --linha:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+
+/* ===== NAV ===== */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--bg);z-index:50;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{width:40px;height:40px;border-radius:9px;}
+.nav-logo-text{font-size:20px;font-weight:800;letter-spacing:-.5px;color:var(--fg);}
+.nav-logo-text span{background:linear-gradient(135deg,var(--roxo),var(--ciano));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;align-items:center;gap:26px;}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;transition:color .2s;}
+.nav-links a:hover{color:var(--fg);}
+.nav-cta{background:linear-gradient(135deg,var(--roxo),var(--ciano));color:#fff !important;padding:10px 20px;border-radius:10px;font-weight:700;}
+.theme-toggle{background:none;border:1px solid var(--linha);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;}
+.nav-toggle{display:none;background:none;border:none;font-size:26px;color:var(--fg);cursor:pointer;}
+
+/* ===== CONTAINER ===== */
+.wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px;}
+.wrap-wide{max-width:1080px;}
+
+/* ===== BLOG INDEX ===== */
+.blog-hero{text-align:center;padding:64px 24px 8px;}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ciano);background:color-mix(in srgb,var(--ciano) 12%,transparent);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+.blog-hero h1{font-size:clamp(30px,5vw,46px);font-weight:900;letter-spacing:-1.5px;margin:0 0 14px;}
+.blog-hero p{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto;}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;margin-top:8px;}
+.post-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--linha);border-radius:16px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(15,23,42,.16);}
+.post-thumb{height:150px;background:linear-gradient(135deg,var(--roxo),var(--ciano));display:flex;align-items:center;justify-content:center;font-size:46px;}
+.post-body{padding:24px;}
+.post-tag{font-size:12px;font-weight:700;color:var(--ciano);text-transform:uppercase;letter-spacing:.06em;}
+.post-body h2{font-size:20px;font-weight:800;margin:10px 0 10px;line-height:1.3;color:var(--fg);}
+.post-body p{color:var(--muted);font-size:15px;margin:0;}
+.post-meta{margin-top:16px;font-size:13px;color:var(--muted);}
+
+/* ===== ARTIGO ===== */
+.article-head{max-width:780px;margin:0 auto;padding:48px 24px 0;}
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:22px;}
+.crumbs a{color:var(--ciano);text-decoration:none;}
+.article-head h1{font-size:clamp(28px,4.6vw,44px);font-weight:900;letter-spacing:-1.4px;line-height:1.15;margin:0 0 16px;}
+.article-meta{color:var(--muted);font-size:14px;}
+.article-cover{max-width:1080px;margin:32px auto 0;padding:0 24px;}
+.article-cover .band{height:8px;border-radius:8px;background:linear-gradient(90deg,var(--roxo),var(--ciano));}
+article{max-width:780px;margin:0 auto;padding:8px 24px 40px;font-size:17px;}
+article h2{font-size:27px;font-weight:800;letter-spacing:-.6px;margin:42px 0 14px;}
+article h3{font-size:20px;font-weight:700;margin:28px 0 8px;}
+article p{margin:0 0 18px;}
+article ul,article ol{margin:0 0 18px;padding-left:22px;}
+article li{margin-bottom:8px;}
+article a{color:var(--ciano);text-decoration:underline;text-underline-offset:2px;}
+article strong{color:var(--fg);}
+.lead{font-size:19px;color:var(--muted);}
+.nota{background:var(--card);border-left:4px solid var(--ciano);border-radius:8px;padding:16px 18px;margin:24px 0;font-size:15px;color:var(--muted);}
+.faq h3{margin-top:24px;}
+.cta-box{margin:46px 0 0;padding:34px;border-radius:18px;background:linear-gradient(135deg,var(--roxo),var(--ciano));color:#fff;text-align:center;}
+.cta-box h3{font-size:24px;font-weight:800;margin:0 0 10px;color:#fff;}
+.cta-box p{margin:0 0 20px;opacity:.92;}
+.cta-box a{display:inline-block;background:#fff;color:#0a0f1e;font-weight:800;padding:13px 28px;border-radius:11px;text-decoration:none;}
+
+/* ===== FOOTER ===== */
+.foot{border-top:1px solid var(--linha);padding:34px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px;}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+.foot-links a{text-decoration:none;color:var(--muted);}
+.foot-links a:hover{color:var(--fg);}
+
+@media (max-width:760px){
+  .nav{padding:14px 20px;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);border-bottom:1px solid var(--linha);padding:18px 22px;gap:16px;}
+  .nav.open .nav-links{display:flex;}
+  .nav-toggle{display:block;}
+  .wrap{padding:40px 20px 64px;}
+  .foot{padding:28px 20px;flex-direction:column;text-align:center;}
+  .foot-links{justify-content:center;}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"Posso usar Spotify na minha loja? A resposta (e o que fazer)",
+  "description":"Usar Spotify, YouTube ou Deezer no comercio e permitido? Termos de uso, riscos, ECAD e a forma correta de ter musica na loja.",
+  "image":"https://ecoarplay.com.br/og-cover.png",
+  "datePublished":"2026-06-07",
+  "dateModified":"2026-06-07",
+  "inLanguage":"pt-BR",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://ecoarplay.com.br/blog/usar-spotify-na-loja/"},
+  "author":{"@type":"Organization","name":"EcoarPlay"},
+  "publisher":{"@type":"Organization","name":"EcoarPlay","logo":{"@type":"ImageObject","url":"https://ecoarplay.com.br/favicon.png"}}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Posso usar minha conta pessoal do Spotify na loja?","acceptedAnswer":{"@type":"Answer","text":"Nao. As contas pessoais do Spotify (gratuita ou Premium) sao licenciadas apenas para uso pessoal e nao comercial. Tocar essa conta em um ambiente comercial vai contra os termos de uso do servico."}},
+    {"@type":"Question","name":"Usar Spotify na loja e ilegal?","acceptedAnswer":{"@type":"Answer","text":"Ha duas camadas: o uso comercial de uma conta pessoal viola os termos do Spotify (que pode suspender a conta) e, alem disso, tocar musica em ambiente comercial gera obrigacao de direitos autorais junto ao ECAD, independentemente da fonte da musica."}},
+    {"@type":"Question","name":"O Spotify tem um plano para empresas?","acceptedAnswer":{"@type":"Answer","text":"O Spotify oferece solucoes de musica para negocios por meio de servicos B2B licenciados, separados da conta pessoal. Ainda assim, no Brasil, a obrigacao com o ECAD pela execucao publica continua sendo do estabelecimento."}},
+    {"@type":"Question","name":"E o YouTube, Deezer ou Apple Music, posso usar na loja?","acceptedAnswer":{"@type":"Answer","text":"A regra e a mesma: as contas pessoais desses servicos sao para uso domestico e proibem uso comercial. Para o ponto de venda o recomendado e uma solucao de radio indoor profissional."}}
+  ]
+}
+</script>
+</head>
+<body class="dark-theme">
+<script>(function(){try{if(localStorage.getItem('ecoarplay-theme')==='light')document.body.classList.remove('dark-theme');}catch(e){}})();</script>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">
+    <img src="/favicon.png" alt="EcoarPlay">
+    <span class="nav-logo-text">Ecoar<span>Play</span></span>
+  </a>
+  <button class="nav-toggle" aria-label="Menu" onclick="this.parentElement.classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="/#paraquem">Para quem</a>
+    <a href="/#features">Produto</a>
+    <a href="/#pricing">Planos</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contato</a>
+    <a class="nav-cta" href="https://apptst.ecoarplay.com.br/operacao-ecoarplay/login/" target="_blank" rel="noopener">Acessar sistema</a>
+    <button class="theme-toggle" aria-label="Alternar tema" onclick="toggleTheme()">&#127769;</button>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="crumbs"><a href="/">Inicio</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Posso usar Spotify na minha loja?</div>
+  <span class="pill">Direitos & uso</span>
+  <h1>Posso usar Spotify na minha loja?</h1>
+  <div class="article-meta">Atualizado em 7 de junho de 2026 &middot; Leitura de ~6 min</div>
+</header>
+
+<div class="article-cover"><div class="band"></div></div>
+
+<article>
+  <p class="lead">E uma das duvidas mais comuns de quem tem comercio: &ldquo;ja pago o Spotify, posso simplesmente ligar na loja?&rdquo;. A resposta curta e <strong>nao</strong> &mdash; e o motivo tem duas camadas que todo lojista precisa entender antes de tomar uma multa ou ter a conta bloqueada.</p>
+
+  <h2>A resposta curta</h2>
+  <p>Usar a sua <strong>conta pessoal</strong> do Spotify (gratuita ou Premium) para tocar musica na loja <strong>nao e permitido</strong>. Esse tipo de conta e licenciado apenas para uso pessoal e domestico &mdash; usa-la em um ambiente comercial vai contra os proprios termos de uso do servico. E, mesmo que voce resolvesse essa parte, ainda existe a questao dos direitos autorais (ECAD), que independe de onde a musica vem.</p>
+
+  <h2>O que dizem os termos de uso</h2>
+  <p>Os termos do Spotify &mdash; assim como os de YouTube, Deezer e Apple Music nas suas versoes de consumidor &mdash; deixam claro que o servico e para <strong>uso pessoal e nao comercial</strong>. Tocar essas plataformas como trilha de um estabelecimento aberto ao publico e considerado uso comercial e fere o contrato que voce aceitou ao criar a conta.</p>
+  <p>Na pratica, isso significa que aquela playlist que voce curte em casa nao foi licenciada para virar a "radio" da sua loja, por mais que voce pague a assinatura mensal.</p>
+
+  <h2>Os riscos de usar conta pessoal no comercio</h2>
+  <ul>
+    <li><strong>Suspensao da conta:</strong> o uso comercial detectado pode levar ao bloqueio do seu acesso.</li>
+    <li><strong>Anuncios no meio do expediente:</strong> na versao gratuita, propagandas (inclusive de concorrentes) entram no meio da musica, no pior momento possivel.</li>
+    <li><strong>Instabilidade:</strong> a conta para se tocar em outro dispositivo, o app pede interacao, a internet oscila &mdash; e a loja fica em silencio.</li>
+    <li><strong>Exposicao com o ECAD:</strong> trocar o Spotify por outra fonte nao elimina a obrigacao de direitos autorais sobre a execucao publica da musica.</li>
+  </ul>
+
+  <h2>&ldquo;Mas e o Spotify para empresas?&rdquo;</h2>
+  <p>Existem servicos de musica voltados a negocios (inclusive ligados ao proprio Spotify), que licenciam a reproducao para ambientes comerciais &mdash; algo diferente da sua conta pessoal. Eles resolvem a parte do uso comercial do catalogo, mas atencao: <strong>no Brasil, a obrigacao com o ECAD pela execucao publica continua sendo do estabelecimento</strong>. Ou seja, o servico de musica e uma coisa; os direitos autorais recolhidos pelo ECAD sao outra.</p>
+  <div class="nota">&#9878;&#65039; Conteudo informativo, nao e orientacao juridica. As regras e tabelas do ECAD mudam com o tempo &mdash; confirme as condicoes atuais junto ao proprio orgao ou a um profissional.</div>
+
+  <h2>A forma correta: radio indoor profissional</h2>
+  <p>Para o ponto de venda, o caminho seguro e usar uma solucao de <strong>radio indoor</strong> feita para isso. Em vez de improvisar com uma conta domestica, voce passa a ter:</p>
+  <ul>
+    <li>Musica <strong>sem anuncios de terceiros</strong> e com curadoria adequada ao seu publico;</li>
+    <li><strong>Programacao por horario</strong> e campanhas sonoras (ofertas, avisos) automaticas;</li>
+    <li><strong>Estabilidade</strong> &mdash; um player dedicado que toca o dia inteiro sem depender do seu celular;</li>
+    <li>Gestao centralizada quando voce tem <strong>varias unidades</strong>.</li>
+  </ul>
+  <p>E o que o <a href="/#features">EcoarPlay</a> entrega: radio indoor com gestao 100% web, curadoria, campanhas e um player proprio para tocar na sua loja com seguranca. Se quiser entender mais sobre como escolher a trilha certa, veja tambem o nosso guia de <a href="/blog/musica-ambiente-para-loja/">musica ambiente para loja</a>.</p>
+
+  <h2 class="faq">Perguntas frequentes</h2>
+  <div class="faq">
+    <h3>Posso usar minha conta pessoal do Spotify na loja?</h3>
+    <p>Nao. As contas pessoais (gratuita ou Premium) sao para uso pessoal e nao comercial. Toca-las em um ambiente comercial vai contra os termos de uso.</p>
+    <h3>Usar Spotify na loja e ilegal?</h3>
+    <p>Sao duas camadas: o uso comercial de uma conta pessoal viola os termos do Spotify (que pode suspender a conta) e, alem disso, tocar musica no comercio gera obrigacao de direitos autorais junto ao ECAD, independentemente da fonte.</p>
+    <h3>O Spotify tem um plano para empresas?</h3>
+    <p>Existem solucoes B2B licenciadas, separadas da conta pessoal. Mesmo assim, no Brasil a obrigacao com o ECAD pela execucao publica continua sendo do estabelecimento.</p>
+    <h3>E o YouTube, Deezer ou Apple Music?</h3>
+    <p>Mesma regra: as contas pessoais sao para uso domestico e proibem uso comercial. Para a loja, o recomendado e uma solucao de radio indoor profissional.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Toque musica na loja do jeito certo</h3>
+    <p>Conheca o EcoarPlay e tenha radio indoor profissional, sem anuncios e sem dor de cabeca.</p>
+    <a href="/#contact">Solicitar demonstracao gratuita</a>
+  </div>
+</article>
+
+<footer class="foot">
+  <span>&copy; 2026 EcoarPlay &mdash; Tecnologia em Midias Indoor</span>
+  <div class="foot-links">
+    <a href="/">Inicio</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contato</a>
+    <a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle('dark-theme');
+  try{ localStorage.setItem('ecoarplay-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light'); }catch(e){}
+}
+</script>
+</body>
+</html>
