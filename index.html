@@ -339,6 +339,12 @@ body.js-anim .hero-anim.h2{animation-delay:.12s;}
 body.js-anim .hero-anim.h3{animation-delay:.24s;}
 body.js-anim .hero-anim.h4{animation-delay:.36s;}
 @keyframes heroIn{to{opacity:1;transform:none;}}
+/* equalizador sutil no hero (mesma identidade do login do app) */
+.hero-eq{position:absolute;left:0;right:0;bottom:0;height:62%;display:flex;align-items:flex-end;gap:5px;padding:0 24px;opacity:.20;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(to top,#000 48%,transparent 96%);mask-image:linear-gradient(to top,#000 48%,transparent 96%);}
+.hero-eq span{flex:1;min-width:3px;background:linear-gradient(to top,var(--roxo),var(--ciano));border-radius:4px 4px 0 0;transform:scaleY(.4);transform-origin:bottom;animation:eqbar 1.2s ease-in-out infinite alternate;}
+body.dark-theme .hero-eq{opacity:.32;}
+@keyframes eqbar{from{transform:scaleY(.22);}to{transform:scaleY(1);}}
+@media (prefers-reduced-motion: reduce){.hero-eq span{animation:none;transform:scaleY(.5);}}
 @media (prefers-reduced-motion: reduce){
   body.js-anim .hero-anim{opacity:1 !important;transform:none !important;animation:none !important;}
 }
@@ -370,6 +376,7 @@ body.js-anim .hero-anim.h4{animation-delay:.36s;}
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-eq" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-pill"><div class="hero-pill-dot"></div>Tecnologia em Mídias Indoor</div>
     <h1>O som certo.<br>No lugar certo.<br><span class="g">Na hora certa.</span></h1>
@@ -761,6 +768,17 @@ function enviarLead(){
 // ===== Efeitos visuais (reveal no scroll, nav, entrada do hero) =====
 (function(){
   document.body.classList.add('js-anim');
+  // equalizador do hero (barras geradas via JS, sem peso de imagem)
+  var eq = document.querySelector('.hero-eq');
+  if (eq){
+    for (var b = 0; b < 48; b++){
+      var s = document.createElement('span');
+      s.style.height = (20 + Math.random() * 80).toFixed(0) + '%';
+      s.style.animationDuration = (0.9 + Math.random() * 1.2).toFixed(2) + 's';
+      s.style.animationDelay = (-Math.random() * 2).toFixed(2) + 's';
+      eq.appendChild(s);
+    }
+  }
   var hero = document.querySelector('.hero-inner');
   if (hero){
     var hk = hero.children;
