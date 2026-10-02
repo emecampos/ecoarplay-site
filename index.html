@@ -494,7 +494,7 @@ body.dark-theme .hero-eq{opacity:.32;}
       <!-- Carrossel do SISTEMA (moldura navegador) -->
       <div class="car car-wide" data-carousel data-interval="4200">
         <div class="car-frame">
-          <div class="car-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url">apptst.ecoarplay.com.br</span></div>
+          <div class="car-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url">app.ecoarplay.com.br</span></div>
           <div class="car-viewport shots">
             <div class="car-slide active" data-cap="📊 Dashboard Analytics — reproduções em tempo real"><img src="assets/img/dashboard.webp" alt="📊 Dashboard Analytics — reproduções em tempo real" loading="lazy"></div>
             <div class="car-slide" data-cap="📡 Monitoramento de terminais online/offline"><img src="assets/img/monitoramento.webp" alt="📡 Monitoramento de terminais online/offline" loading="lazy"></div>
@@ -735,7 +735,7 @@ document.querySelectorAll('[data-carousel]').forEach(initCar);
 })();
 
 // ===== Formulario -> backend (SMTP) com fallback mailto =====
-var API_CONTATO = 'https://apptst.ecoarplay.com.br/api/contato/'; // trocar para app.ecoarplay.com.br quando a producao subir
+var API_CONTATO = 'https://app.ecoarplay.com.br/api/contato/';
 function enviarLead(){
   var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
   var nome = v('f_nome'), email = v('f_email'), empresa = v('f_empresa');
@@ -805,7 +805,7 @@ function enviarLead(){
   }
 })();
 
-var API_PRECOS = 'https://apptst.ecoarplay.com.br/api/precos/'; // trocar para app.ecoarplay.com.br na producao
+var API_PRECOS = 'https://app.ecoarplay.com.br/api/precos/';
 var PRECOS = null;
 var FAIXA_ATUAL = { min: '1', label: '1 a 50 terminais' };
 function brlPreco(v){
