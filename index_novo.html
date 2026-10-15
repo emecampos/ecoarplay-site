@@ -14,7 +14,7 @@
 <title>Rádio indoor para lojas: música ambiente e spots | EcoarPlay</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Rádio indoor para lojas: música ambiente com curadoria, spots e avisos por horário, spot avulso a partir de R$ 24,90 e assessoria ECAD.">
-<meta name="keywords" content="rádio indoor, rádio indoor para lojas, música ambiente para loja, som ambiente para comércio, spot para loja, locução para loja, vinheta, curadoria musical, ECAD loja, EcoarPlay">
+<meta name="keywords" content="rádio indoor, rádio indoor para lojas, som ambiente, música ambiente para loja, rádio corporativa, rádio para supermercado, rádio para farmácia, rádio para academia, spot para loja, locução para loja, vinheta, curadoria musical, ECAD loja, EcoarPlay">
 <meta name="author" content="EcoarPlay Tecnologia em Mídias Indoor">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -48,7 +48,7 @@
       "url": "https://ecoarplay.com.br/",
       "logo": "https://ecoarplay.com.br/apple-touch-icon.png",
       "image": "https://ecoarplay.com.br/og-cover-novo.png",
-      "description": "Rádio indoor para lojas e redes: música ambiente com curadoria, spots e avisos programados, criação de spots com locução e assessoria ECAD.",
+      "description": "Rádio indoor e rádio corporativa para lojas e redes: som ambiente com curadoria musical, spots, ofertas e chamadas programados por horário e unidade, criação de spots com locução e assessoria ECAD. Atende supermercados, farmácias, academias, lojas, clínicas e restaurantes.",
       "email": "ecoarplay@gmail.com",
       "telephone": "+55-11-98363-6557",
       "address": { "@type": "PostalAddress", "addressLocality": "Timbó", "addressRegion": "SC", "addressCountry": "BR" },
@@ -286,6 +286,14 @@ section{scroll-margin-top:72px}
 .pq .quem{font-size:15px;color:var(--ink);font-weight:500}
 .pq .quem span{color:var(--muted);font-weight:400}
 @media (max-width:760px){ .pq{grid-template-columns:1fr} .pq > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)} .pq > div{padding-right:0} }
+
+/* SEGMENTOS */
+.segs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
+.seg{border-top:2px solid var(--ink);padding:18px 0 28px;display:grid;gap:8px;align-content:start}
+.seg h3{font-size:21px;font-weight:800}
+.seg p{color:var(--muted);font-size:16px}
+@media (max-width:900px){ .segs{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .segs{grid-template-columns:1fr} }
 
 /* PLATAFORMA (tour) */
 .tour-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;border-bottom:1px solid var(--line)}
@@ -556,7 +564,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="EcoarPlay, início"><img src="favicon.png" alt="" width="34" height="34">Ecoar<b>Play</b></a>
     <ul id="menu">
-      <li><a href="#paraquem">Para quem</a></li>
+      <li><a href="#segmentos">Segmentos</a></li>
       <li><a href="#plataforma">Plataforma</a></li>
       <li><a href="#criador" class="novo">Criador de Áudios</a></li>
       <li><a href="#servicos">Serviços</a></li>
@@ -585,7 +593,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
     <div class="hero-grid">
       <h1><span>O som certo.</span><span>No lugar certo.</span><span>Na hora certa.</span></h1>
       <div class="hero-side">
-        <p class="lead">Rádio indoor para o varejo. Música ambiente, campanhas e avisos programados por loja e por horário, e áudios prontos a partir de um texto. Tudo gerenciado pela web, com player próprio em cada unidade.</p>
+        <p class="lead">Rádio indoor para o varejo. Som ambiente, ofertas e avisos programados por loja e por horário, e áudios prontos a partir de um texto. Tudo gerenciado pela web, com player próprio em cada unidade.</p>
         <div class="cta-row">
           <a class="btn btn-pri" href="#contato">Agendar demonstração gratuita</a>
           <a class="btn btn-sec" href="#plataforma">Ver a plataforma</a>
@@ -632,7 +640,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
     <div class="pq">
       <div>
         <h3>Uso próprio</h3>
-        <p>Sua empresa controla o som de todas as unidades num só painel: estilo musical por horário, campanhas por filial e avisos que a própria loja dispara.</p>
+        <p>Uma rádio corporativa para a sua rede. Sua empresa controla o som de todas as unidades num só painel: estilo musical por horário, campanhas por filial e avisos que a própria loja dispara.</p>
         <p class="quem">Redes de varejo, franquias, restaurantes, academias, clínicas, <span>concessionárias e atendimento ao público</span></p>
       </div>
       <div>
@@ -644,8 +652,26 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   </div>
 </section>
 
+<!-- SEGMENTOS -->
+<section class="band" id="segmentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Uma rádio para cada tipo de negócio</h2>
+      <p class="lead">Som ambiente e comunicação pensados para o ritmo de cada lugar.</p>
+    </div>
+    <div class="segs">
+      <div class="seg"><h3>Supermercados</h3><p>Ofertas do açougue, da padaria e do hortifrúti nos horários de maior movimento, chamadas de funcionários e avisos do estacionamento.</p></div>
+      <div class="seg"><h3>Farmácias e drogarias</h3><p>Música tranquila, campanhas de saúde e de marcas parceiras e avisos sobre serviços como aplicação e aferição.</p></div>
+      <div class="seg"><h3>Academias</h3><p>Mais energia nos horários de pico, avisos de aulas e horários e campanhas de matrícula e indicação.</p></div>
+      <div class="seg"><h3>Lojas e franquias</h3><p>O mesmo som em todas as unidades, lançamentos e liquidações em todas as lojas de uma vez e campanhas só onde fizer sentido.</p></div>
+      <div class="seg"><h3>Clínicas e atendimento ao público</h3><p>Sala de espera mais calma, mensagens institucionais e orientações para quem aguarda o atendimento.</p></div>
+      <div class="seg"><h3>Restaurantes e cafés</h3><p>Um estilo para o almoço, outro para o fim de tarde e a noite, e chamadas para o prato do dia e o delivery.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- PLATAFORMA -->
-<section class="band" id="plataforma">
+<section class="band alt" id="plataforma">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2">Uma plataforma, do cadastro ao play</h2>
@@ -703,6 +729,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
           <li>Estilos diferentes de manhã, à tarde e à noite</li>
           <li>Campanhas com data de início e fim</li>
           <li>Institucionais para todas as unidades com um clique</li>
+          <li>Chamadas de funcionários e do estacionamento</li>
         </ul>
       </div>
       <div class="win">
@@ -975,7 +1002,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
 </section>
 
 <!-- PERGUNTAS FREQUENTES -->
-<section class="band" id="duvidas">
+<section class="band alt" id="duvidas">
   <div class="wrap">
     <div class="faq-grid">
       <div class="sec-head">
@@ -1047,7 +1074,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
     <div class="foot">
       <a class="brand" href="#topo"><img src="favicon.png" alt="" width="30" height="30">Ecoar<b>Play</b></a>
       <nav aria-label="Rodapé">
-        <a href="#paraquem">Para quem</a><a href="#plataforma">Plataforma</a><a href="#criador">Criador de Áudios</a><a href="#avulso">Áudio avulso</a><a href="#servicos">Serviços</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a><a href="blog/">Blog</a><a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
+        <a href="#paraquem">Para quem</a><a href="#segmentos">Segmentos</a><a href="#plataforma">Plataforma</a><a href="#criador">Criador de Áudios</a><a href="#avulso">Áudio avulso</a><a href="#servicos">Serviços</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a><a href="blog/">Blog</a><a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
       </nav>
     </div>
     <div class="foot-bottom"><span>© 2026 EcoarPlay Tecnologia em Mídias Indoor</span><span>Timbó, Santa Catarina</span></div>
