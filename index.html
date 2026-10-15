@@ -1201,6 +1201,16 @@ document.getElementById('videoBtn').addEventListener('click', function(){
   box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/x_eD2cL5SPY?rel=0&autoplay=1" title="EcoarPlay Player em ação" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 });
 
+// ===== Medição de contatos (Google Analytics / Google Ads) =====
+function medir(evento, dados){ try { if (typeof gtag === 'function') gtag('event', evento, dados || {}); } catch(e){} }
+document.addEventListener('click', function(e){
+  var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+  if (!a) return;
+  var sec = a.closest('section'); var origem = a.classList.contains('wa-float') ? 'botao_flutuante' : (sec && sec.id ? sec.id : 'outro');
+  medir('generate_lead', { metodo: 'whatsapp', origem: origem });
+  medir('clique_whatsapp', { origem: origem });
+});
+
 // ===== Formulário -> backend (SMTP) =====
 var API_CONTATO = 'https://app.ecoarplay.com.br/api/contato/';
 document.getElementById('leadForm').addEventListener('submit', function(e){ e.preventDefault(); enviarLead(); });
@@ -1215,6 +1225,7 @@ function enviarLead(){
   .then(function(r){
     if (!r.ok) throw new Error('http ' + r.status);
     fb.style.color = 'var(--mint)'; fb.textContent = 'Mensagem enviada. Em breve entraremos em contato.';
+    medir('generate_lead', { metodo: 'formulario', interesse: uso || 'nao informado' });
     ['f_nome','f_email','f_empresa','f_term','f_msg'].forEach(function(id){ document.getElementById(id).value = ''; });
     document.getElementById('f_uso').selectedIndex = 0;
   }).catch(function(){
