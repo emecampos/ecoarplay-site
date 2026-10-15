@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>EcoarPlay — Rádio Indoor para o Varejo | Música Ambiente, Campanhas e Criador de Áudios</title>
+<title>Rádio indoor para lojas: música ambiente e spots | EcoarPlay</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Rádio indoor para o varejo: música ambiente, campanhas e avisos programados por loja e horário, Criador de Áudios com locução, trilha e vinhetas, gestão 100% web e player para Windows. Para uso próprio ou revenda.">
-<meta name="keywords" content="rádio indoor, música ambiente, mídia indoor, campanhas sonoras, spot para loja, locução para loja, áudio avulso, curadoria musical, música para loja, EcoarPlay">
+<meta name="description" content="Rádio indoor para lojas: música ambiente com curadoria, spots e avisos por horário, spot avulso a partir de R$ 24,90 e assessoria ECAD.">
+<meta name="keywords" content="rádio indoor, rádio indoor para lojas, música ambiente para loja, som ambiente para comércio, spot para loja, locução para loja, vinheta, curadoria musical, ECAD loja, EcoarPlay">
 <meta name="author" content="EcoarPlay Tecnologia em Mídias Indoor">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -26,41 +26,94 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EcoarPlay">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="EcoarPlay — O som certo, no lugar certo, na hora certa">
-<meta property="og:description" content="Rádio indoor para o varejo: música ambiente, campanhas e avisos por loja e horário, e áudios prontos a partir de um texto.">
+<meta property="og:title" content="EcoarPlay — Rádio indoor para lojas">
+<meta property="og:description" content="Rádio indoor para lojas: música ambiente com curadoria, spots e avisos por horário e unidade, e spots com locução a partir de um texto.">
 <meta property="og:url" content="https://ecoarplay.com.br/">
-<meta property="og:image" content="https://ecoarplay.com.br/og-cover.png">
+<meta property="og:image" content="https://ecoarplay.com.br/og-cover-novo.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EcoarPlay — Rádio Indoor para o Varejo">
-<meta name="twitter:description" content="Música ambiente, campanhas, avisos e áudios prontos a partir de um texto. Gestão 100% web.">
-<meta name="twitter:image" content="https://ecoarplay.com.br/og-cover.png">
+<meta name="twitter:description" content="Música ambiente com curadoria, spots e avisos por loja e horário, e spots com locução a partir de um texto.">
+<meta name="twitter:image" content="https://ecoarplay.com.br/og-cover-novo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "EcoarPlay",
-  "url": "https://ecoarplay.com.br/",
-  "logo": "https://ecoarplay.com.br/favicon.png",
-  "image": "https://ecoarplay.com.br/og-cover.png",
-  "description": "Plataforma de rádio indoor para o varejo: música ambiente, campanhas sonoras, avisos e criação de áudios, com gestão 100% web e player para Windows.",
-  "email": "ecoarplay@gmail.com",
-  "areaServed": "BR",
-  "sameAs": ["https://www.youtube.com/@EcoarPlay", "https://www.instagram.com/ecoarplay"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "EcoarPlay",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web, Windows",
-  "inLanguage": "pt-BR",
-  "url": "https://ecoarplay.com.br/",
-  "description": "Rádio indoor para estabelecimentos comerciais: música ambiente, campanhas e avisos programados, Criador de Áudios, monitoramento de terminais e player próprio.",
-  "offers": { "@type": "Offer", "priceCurrency": "BRL", "category": "SaaS" }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ecoarplay.com.br/#org",
+      "name": "EcoarPlay",
+      "alternateName": "EcoarPlay Tecnologia em Mídias Indoor",
+      "url": "https://ecoarplay.com.br/",
+      "logo": "https://ecoarplay.com.br/apple-touch-icon.png",
+      "image": "https://ecoarplay.com.br/og-cover-novo.png",
+      "description": "Rádio indoor para lojas e redes: música ambiente com curadoria, spots e avisos programados, criação de spots com locução e assessoria ECAD.",
+      "email": "ecoarplay@gmail.com",
+      "telephone": "+55-11-98363-6557",
+      "address": { "@type": "PostalAddress", "addressLocality": "Timbó", "addressRegion": "SC", "addressCountry": "BR" },
+      "areaServed": "BR",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+55-11-98363-6557", "availableLanguage": "Portuguese" },
+      "sameAs": ["https://www.youtube.com/@EcoarPlay", "https://www.instagram.com/ecoarplay"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "EcoarPlay",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "inLanguage": "pt-BR",
+      "url": "https://ecoarplay.com.br/",
+      "publisher": { "@id": "https://ecoarplay.com.br/#org" },
+      "description": "Rádio indoor para estabelecimentos comerciais: música ambiente, spots e avisos programados por horário e unidade, monitoramento dos players e relatório de execução musical.",
+      "offers": { "@type": "Offer", "priceCurrency": "BRL", "category": "SaaS" }
+    },
+    {
+      "@type": "Service",
+      "name": "Criador de Áudios",
+      "serviceType": "Criação de spots, vinhetas e avisos com locução para lojas",
+      "provider": { "@id": "https://ecoarplay.com.br/#org" },
+      "areaServed": "BR",
+      "offers": [
+        { "@type": "Offer", "name": "Áudios 10", "price": "69.90", "priceCurrency": "BRL", "description": "10 créditos por mês" },
+        { "@type": "Offer", "name": "Áudios 30", "price": "149.90", "priceCurrency": "BRL", "description": "30 créditos por mês" },
+        { "@type": "Offer", "name": "Áudios 100", "price": "349.90", "priceCurrency": "BRL", "description": "100 créditos por mês" },
+        { "@type": "Offer", "name": "Áudios 300", "price": "749.90", "priceCurrency": "BRL", "description": "300 créditos por mês" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Spot avulso para loja",
+      "serviceType": "Spot ou locução avulsa, sem assinatura",
+      "provider": { "@id": "https://ecoarplay.com.br/#org" },
+      "areaServed": "BR",
+      "offers": { "@type": "Offer", "price": "24.90", "priceCurrency": "BRL", "description": "Por áudio de até 500 caracteres, entrega em até 1 dia útil" }
+    },
+    {
+      "@type": "Service",
+      "name": "Curadoria musical para empresas",
+      "serviceType": "Escolha de estilo, seleção e gerenciamento de música ambiente",
+      "provider": { "@id": "https://ecoarplay.com.br/#org" },
+      "areaServed": "BR"
+    },
+    {
+      "@type": "Service",
+      "name": "Assessoria ECAD",
+      "serviceType": "Regularização da execução pública de música em estabelecimentos",
+      "provider": { "@id": "https://ecoarplay.com.br/#org" },
+      "areaServed": "BR"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Preciso pagar ECAD para tocar música na minha loja?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Tocar música em estabelecimento comercial é execução pública e exige licença do ECAD, em nome do estabelecimento. O EcoarPlay oferece assessoria para o cadastro e gera o relatório das músicas executadas." } },
+        { "@type": "Question", "name": "Posso usar Spotify ou YouTube na minha loja?", "acceptedAnswer": { "@type": "Answer", "text": "Não. As contas pessoais desses serviços são para uso doméstico e não cobrem a execução em estabelecimentos comerciais. Uma rádio indoor toca acervo próprio para o ambiente, com programação por horário." } },
+        { "@type": "Question", "name": "Quanto custa um spot para loja?", "acceptedAnswer": { "@type": "Answer", "text": "Um spot avulso custa R$ 24,90 por áudio de até 500 caracteres, sem assinatura. Para quem usa a rádio, os planos do Criador de Áudios começam em R$ 69,90 por mês com 10 créditos." } },
+        { "@type": "Question", "name": "O player funciona sem internet?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O player baixa as músicas e os spots para o computador da loja e continua tocando se a internet cair. Quando a conexão volta, ele busca as novidades sozinho." } },
+        { "@type": "Question", "name": "O que preciso ter na loja?", "acceptedAnswer": { "@type": "Answer", "text": "Um computador com Windows ligado ao sistema de som e acesso à internet para receber a programação." } },
+        { "@type": "Question", "name": "Dá para ter uma programação diferente em cada unidade?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Cada unidade pode ter estilos musicais por horário, campanhas e avisos próprios, e também receber institucionais enviados para toda a rede de uma vez." } }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,6 +505,17 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 .pricing-notes strong{color:var(--ink)}
 @media (max-width:900px){ .plans,.pricing-notes{grid-template-columns:1fr} }
 
+/* DÚVIDAS */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,64px);align-items:start}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-weight:700;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:24px;line-height:1;color:var(--sky);flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 18px;color:var(--muted);max-width:62ch}
+@media (max-width:860px){ .faq-grid{grid-template-columns:1fr} }
+
 /* CONTATO */
 .contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px)}
 .contact-left{display:grid;gap:22px;align-content:start}
@@ -497,6 +561,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
       <li><a href="#criador" class="novo">Criador de Áudios</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#planos">Planos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -584,7 +649,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2">Uma plataforma, do cadastro ao play</h2>
-      <p class="lead">Telas reais do EcoarPlay, com dados de exemplo.</p>
+      <p class="lead">Gerencie a música ambiente, os spots e os avisos de todas as lojas pela web. Telas do EcoarPlay com dados de exemplo.</p>
     </div>
 
     <div class="tour-tabs" role="tablist" aria-label="Partes da plataforma">
@@ -730,7 +795,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
         <div class="sec-head">
           <span class="tag new"><span class="dot"></span>Novo</span>
           <h2 class="h2">Escreva o texto. A loja ouve o áudio pronto.</h2>
-          <p class="lead">O Criador de Áudios transforma o seu texto em locução profissional, com trilha e vinhetas. Aprovado, o áudio entra direto na programação das lojas.</p>
+          <p class="lead">O Criador de Áudios transforma o seu texto em spots, vinhetas e avisos para a sua loja, com locução profissional e trilha. Aprovado, o áudio entra direto na programação das lojas.</p>
         </div>
         <ol class="steps">
           <li><div><b>Escolha o formato</b><span>Spot, vinheta, teaser, aviso ou só a voz.</span></div></li>
@@ -794,8 +859,8 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   <div class="wrap">
     <div class="avulso">
       <div class="avulso-copy">
-        <h2 class="h2">Precisa de um áudio só?</h2>
-        <p class="lead">Mesmo sem ser cliente da plataforma, você pode pedir um áudio avulso. Mande o texto pelo WhatsApp e receba o arquivo pronto, conferido por nós antes da entrega.</p>
+        <h2 class="h2">Precisa de um spot só?</h2>
+        <p class="lead">Mesmo sem ser cliente da plataforma, você pode pedir um spot ou uma locução avulsa. Mande o texto pelo WhatsApp e receba o arquivo pronto, conferido por nós antes da entrega.</p>
         <div class="usos" aria-label="Onde usar">
           <span>Rádio indoor de qualquer sistema</span><span>Carro de som</span><span>Redes sociais</span><span>Telefone em espera</span><span>Eventos</span>
         </div>
@@ -820,7 +885,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
 <section class="band alt" id="servicos">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="h2">Além da plataforma</h2>
+      <h2 class="h2">Curadoria musical, ECAD e locução</h2>
       <p class="lead">Serviços para colocar a rádio da sua loja no ar do jeito certo e manter o som sempre bem cuidado.</p>
     </div>
     <div class="servicos">
@@ -909,6 +974,26 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   </div>
 </section>
 
+<!-- PERGUNTAS FREQUENTES -->
+<section class="band" id="duvidas">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="sec-head">
+        <h2 class="h2">Dúvidas frequentes</h2>
+        <p class="lead">Não achou a sua? Pergunte pelo WhatsApp.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Preciso pagar ECAD para tocar música na minha loja?</summary><p>Sim. Tocar música em estabelecimento comercial é execução pública e exige licença do ECAD, em nome do estabelecimento. Oferecemos assessoria para o cadastro, e a plataforma gera o relatório das músicas executadas. Veja o <a href="blog/musica-ambiente-para-loja/">guia de música ambiente para loja</a>.</p></details>
+        <details><summary>Posso usar Spotify ou YouTube na minha loja?</summary><p>Não. As contas pessoais desses serviços são para uso doméstico e não cobrem a execução em estabelecimentos comerciais. Explicamos em detalhe no artigo <a href="blog/usar-spotify-na-loja/">Posso usar Spotify na minha loja?</a></p></details>
+        <details><summary>Quanto custa um spot para loja?</summary><p>Um spot avulso custa R$ 24,90 por áudio de até 500 caracteres, sem assinatura. Para quem usa a rádio, os planos do Criador de Áudios começam em R$ 69,90 por mês com 10 créditos.</p></details>
+        <details><summary>O player funciona sem internet?</summary><p>Sim. O player baixa as músicas e os spots para o computador da loja e continua tocando se a internet cair. Quando a conexão volta, ele busca as novidades sozinho.</p></details>
+        <details><summary>O que preciso ter na loja?</summary><p>Um computador com Windows ligado ao sistema de som e acesso à internet para receber a programação.</p></details>
+        <details><summary>Dá para ter uma programação diferente em cada unidade?</summary><p>Sim. Cada unidade pode ter estilos musicais por horário, campanhas e avisos próprios, e também receber institucionais enviados para toda a rede de uma vez.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section class="band" id="contato">
   <div class="wrap">
@@ -962,7 +1047,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
     <div class="foot">
       <a class="brand" href="#topo"><img src="favicon.png" alt="" width="30" height="30">Ecoar<b>Play</b></a>
       <nav aria-label="Rodapé">
-        <a href="#paraquem">Para quem</a><a href="#plataforma">Plataforma</a><a href="#criador">Criador de Áudios</a><a href="#avulso">Áudio avulso</a><a href="#servicos">Serviços</a><a href="#planos">Planos</a><a href="blog/">Blog</a><a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
+        <a href="#paraquem">Para quem</a><a href="#plataforma">Plataforma</a><a href="#criador">Criador de Áudios</a><a href="#avulso">Áudio avulso</a><a href="#servicos">Serviços</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a><a href="blog/">Blog</a><a href="https://www.youtube.com/@EcoarPlay" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/ecoarplay" target="_blank" rel="noopener">Instagram</a>
       </nav>
     </div>
     <div class="foot-bottom"><span>© 2026 EcoarPlay Tecnologia em Mídias Indoor</span><span>Timbó, Santa Catarina</span></div>
