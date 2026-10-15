@@ -13,8 +13,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>EcoarPlay — Rádio Indoor para o Varejo | Música Ambiente, Campanhas e Criador de Áudios</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Rádio indoor para o varejo: música ambiente, campanhas e avisos programados por loja e horário, Criador de Áudios com voz por inteligência artificial, gestão 100% web e player para Windows. Para uso próprio ou revenda.">
-<meta name="keywords" content="rádio indoor, música ambiente, mídia indoor, campanhas sonoras, spot para loja, locução por inteligência artificial, áudio avulso, música para loja, EcoarPlay">
+<meta name="description" content="Rádio indoor para o varejo: música ambiente, campanhas e avisos programados por loja e horário, Criador de Áudios com locução, trilha e vinhetas, gestão 100% web e player para Windows. Para uso próprio ou revenda.">
+<meta name="keywords" content="rádio indoor, música ambiente, mídia indoor, campanhas sonoras, spot para loja, locução para loja, áudio avulso, curadoria musical, música para loja, EcoarPlay">
 <meta name="author" content="EcoarPlay Tecnologia em Mídias Indoor">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -342,6 +342,24 @@ section{scroll-margin-top:72px}
 .mix{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:12px;color:var(--band-muted);align-items:center}
 .mix .trk{height:14px;border-radius:4px;position:relative;overflow:hidden;background:color-mix(in srgb, var(--band-line) 60%, transparent)}
 .mix .trk i{position:absolute;top:2px;bottom:2px;border-radius:3px}
+.ouvir{background:var(--band-surface);border:1px solid var(--band-line);border-radius:var(--r-win);padding:clamp(18px,3vw,28px);display:grid;gap:16px}
+.ouvir h3{font-size:22px;font-weight:800}
+.ouvir-txt{color:var(--band-muted);font-size:15px;line-height:1.6;border-left:3px solid var(--sky-2);padding-left:14px}
+.faixa{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px;border:1px solid var(--band-line);border-radius:12px}
+.faixa.tocando{border-color:var(--sky-2)}
+.tocar{width:52px;height:52px;border-radius:50%;border:0;background:var(--sky-2);color:#06121F;display:grid;place-items:center;cursor:pointer}
+.tocar svg{width:22px;height:22px;fill:currentColor}
+.tocar .i-play{margin-left:3px}
+.tocar .i-pause,.faixa.tocando .i-play{display:none}
+.faixa.tocando .i-pause{display:block}
+.tocar:disabled{background:var(--band-line);color:var(--band-muted);cursor:default}
+.faixa-info{display:grid;gap:3px;min-width:0}
+.faixa-info b{font-size:16px}
+.faixa-sub{font-size:13px;color:var(--band-muted)}
+.barra{height:5px;border-radius:3px;background:var(--band-line);margin-top:6px;overflow:hidden;cursor:pointer}
+.barra i{display:block;height:100%;width:0;background:var(--sky-2)}
+.tempo{font-size:14px;color:var(--band-muted)}
+.ouvir-nota{font-size:13px;color:var(--band-muted)}
 .formatos{margin-top:clamp(40px,6vw,64px)}
 .formatos h3{font-size:22px;font-weight:800;margin-bottom:16px}
 .tbl-wrap{overflow-x:auto;border:1px solid var(--band-line);border-radius:12px}
@@ -712,7 +730,7 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
         <div class="sec-head">
           <span class="tag new"><span class="dot"></span>Novo</span>
           <h2 class="h2">Escreva o texto. A loja ouve o áudio pronto.</h2>
-          <p class="lead">O Criador de Áudios transforma o seu texto em locução com voz por inteligência artificial, trilha e vinhetas. Aprovado, o áudio entra direto na programação das lojas.</p>
+          <p class="lead">O Criador de Áudios transforma o seu texto em locução profissional, com trilha e vinhetas. Aprovado, o áudio entra direto na programação das lojas.</p>
         </div>
         <ol class="steps">
           <li><div><b>Escolha o formato</b><span>Spot, vinheta, teaser, aviso ou só a voz.</span></div></li>
@@ -722,24 +740,20 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
         </ol>
       </div>
 
-      <div class="studio" role="img" aria-label="Tela do Criador de Áudios com o formato Spot selecionado, um texto de oferta, a voz escolhida e o áudio pronto com voz, trilha e vinhetas.">
-        <div class="studio-h">Criador de Áudios <small>exemplo</small></div>
-        <div class="studio-b">
-          <div class="fmt"><span class="on">Spot</span><span>Vinheta</span><span>Teaser</span><span>Aviso</span><span>Só voz</span></div>
-          <div>
-            <div class="txt">Quinta é dia de feira no Bom Preço! Frutas, legumes e verduras com até 30% de desconto, só hoje, até as oito da noite. Corre que é por tempo limitado!</div>
-            <div class="txt-meta"><span>157 de 1.500 caracteres</span><span>1 crédito</span></div>
-          </div>
-          <div class="voz"><div>Opção B<small>Feminina, animada</small></div><span class="pill sky">Escolhida</span></div>
-          <div class="result">
-            <div class="result-h"><b>Áudio pronto</b><span>0:24</span></div>
-            <div class="mix" aria-hidden="true">
-              <span>Voz</span><div class="trk"><i style="left:12%;right:14%;background:var(--sky-2)"></i></div>
-              <span>Trilha</span><div class="trk"><i style="left:0;right:0;background:color-mix(in srgb, var(--sky-2) 45%, transparent)"></i></div>
-              <span>Vinhetas</span><div class="trk"><i style="left:0;width:10%;background:var(--amber)"></i><i style="right:0;width:12%;background:var(--amber)"></i></div>
-            </div>
-          </div>
+      <div class="ouvir">
+        <h3>Ouça exemplos feitos no Criador</h3>
+        <p class="ouvir-txt">"Atenção, clientes Ecoar Pet! Neste fim de semana, toda a linha de rações premium está com vinte por cento de desconto. E tem mais: na compra de qualquer ração acima de quinze quilos, você leva um petisco de presente. Aproveite enquanto durarem os estoques. Ecoar Pet: porque quem você ama merece o melhor."</p>
+        <div class="faixa" data-audio="assets/audio/exemplo-spot-feminino.mp3">
+          <button type="button" class="tocar" aria-label="Ouvir o spot com voz feminina"><svg viewBox="0 0 24 24" class="i-play"><path d="M8 5v14l11-7z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+          <div class="faixa-info"><b>Spot com voz feminina</b><span class="faixa-sub">Trilha, vinheta de abertura e de encerramento</span><div class="barra"><i></i></div></div>
+          <span class="tempo num">0:00</span>
         </div>
+        <div class="faixa" data-audio="assets/audio/exemplo-spot-masculino.mp3">
+          <button type="button" class="tocar" aria-label="Ouvir o spot com voz masculina"><svg viewBox="0 0 24 24" class="i-play"><path d="M8 5v14l11-7z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+          <div class="faixa-info"><b>Spot com voz masculina</b><span class="faixa-sub">Trilha, vinheta de abertura e de encerramento</span><div class="barra"><i></i></div></div>
+          <span class="tempo num">0:00</span>
+        </div>
+        <p class="ouvir-nota">Texto e marca fictícios, criados para demonstração.</p>
       </div>
     </div>
 
@@ -807,13 +821,13 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2">Além da plataforma</h2>
-      <p class="lead">Serviços para colocar a rádio da sua loja no ar do jeito certo, com a gente e com parceiros especializados.</p>
+      <p class="lead">Serviços para colocar a rádio da sua loja no ar do jeito certo e manter o som sempre bem cuidado.</p>
     </div>
     <div class="servicos">
       <div class="serv">
         <h3>Curadoria musical<small>Mensal, com a assinatura</small></h3>
-        <p>Montamos com nossos parceiros de conteúdo a seleção musical do seu ambiente, pelo perfil do seu público e por horário, e mantemos o acervo sempre renovado.</p>
-        <div class="side">Em parceria</div>
+        <p>Escolhemos o estilo e selecionamos as músicas do seu ambiente, pelo perfil do seu público e por horário, e cuidamos do gerenciamento para manter a qualidade sonora da sua empresa.</p>
+        <div class="side">Acervo sempre renovado</div>
       </div>
       <div class="serv">
         <h3>Assessoria ECAD<small>Cobrança única</small></h3>
@@ -1044,6 +1058,28 @@ footer{border-top:1px solid var(--line);padding-block:40px calc(40px + env(safe-
   tabs.forEach(function(t, i){
     t.addEventListener('click', function(){ ativa(t); });
     t.addEventListener('keydown', function(e){ var j = e.key === 'ArrowRight' ? i+1 : e.key === 'ArrowLeft' ? i-1 : null; if (j === null) return; e.preventDefault(); ativa(tabs[(j + tabs.length) % tabs.length], true); });
+  });
+})();
+
+// ===== Exemplos de áudio do Criador =====
+(function(){
+  var todas = [];
+  function mmss(s){ s = Math.max(0, Math.round(s || 0)); return Math.floor(s/60) + ':' + ('0' + s%60).slice(-2); }
+  document.querySelectorAll('.faixa').forEach(function(f){
+    var a = new Audio(); a.preload = 'metadata'; a.src = f.getAttribute('data-audio');
+    var btn = f.querySelector('.tocar'), bar = f.querySelector('.barra i'), tempo = f.querySelector('.tempo');
+    todas.push(a);
+    a.addEventListener('loadedmetadata', function(){ tempo.textContent = mmss(a.duration); });
+    a.addEventListener('timeupdate', function(){ if (a.duration){ bar.style.width = (a.currentTime / a.duration * 100) + '%'; tempo.textContent = mmss(a.currentTime); } });
+    a.addEventListener('ended', function(){ f.classList.remove('tocando'); bar.style.width = '0'; tempo.textContent = mmss(a.duration); });
+    a.addEventListener('pause', function(){ f.classList.remove('tocando'); });
+    a.addEventListener('play', function(){ f.classList.add('tocando'); });
+    a.addEventListener('error', function(){ btn.disabled = true; tempo.textContent = 'em breve'; });
+    btn.addEventListener('click', function(){
+      if (a.paused){ todas.forEach(function(o){ if (o !== a) o.pause(); }); a.play().catch(function(){}); }
+      else a.pause();
+    });
+    f.querySelector('.barra').addEventListener('click', function(e){ if (!a.duration) return; var r = this.getBoundingClientRect(); a.currentTime = (e.clientX - r.left) / r.width * a.duration; });
   });
 })();
 
